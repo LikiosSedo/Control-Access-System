@@ -1,0 +1,262 @@
+body{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    font-family: ‘Trebuchet MS’, ‘Lucida Sans Unicode’, ‘Lucida Grande’, ‘Lucida Sans’, Arial, sans-serif;
+}
+i{
+    font-family: 'icomoon';
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.wh{
+    color:white;
+}
+/* 左侧导航栏 */
+.bar{
+    z-index: 10;
+    position: fixed;
+    width: 210px;
+    height: 100%;
+    left: -210px;
+    background-color: white;
+    transition: all.5s ease;
+}
+.bar header{
+    font-size: 18px;
+    text-align: center;
+    line-height: 60px;
+    background-color: gainsboro;
+    user-select: none;
+}
+.bar ul li a{
+    display: block;
+    height: 55px;
+    width: 100%;
+    line-height: 55px;
+    font-size: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    transition: .4s;
+}
+.bar ul li :hover{
+    padding-left: 16px;
+    background-color: gainsboro;
+}
+#check{
+    display: none;   
+}
+label #btn,
+label #cancel{
+    z-index: 11;
+    position: absolute;
+    cursor: pointer;
+}
+
+label #btn{
+    left: 12px;
+    top: 12px;
+    font-size: 30px;
+    color: white;
+    background-color:lightsteelblue;
+    border-radius: 3px;
+    padding: 7px 7px;
+    transition: all .5s;
+}
+
+label #cancel{
+    left: -100px;
+    top: 12px;
+    font-size: 25px;
+    color: white;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+#check:checked~.bar{
+    left: 0;
+
+}
+#check:checked~label #btn{
+    left: 210px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked~label #cancel{
+    left: 155px;
+}
+#check:checked~ .bg{
+    margin-left: 210px;
+}
+.bg{
+    z-index: -1;
+    background: url(../imgs/smarthome.jpg) no-repeat;
+    background-position: center;
+    background-size: 1300px 800px;
+    height: 100vh;
+    transition: all .5s ease;
+}
+/* 开始中间部分 */
+.mainfather{
+    z-index: 1;
+    margin: 0px auto;
+    width: 1100px;
+    height: 100%;
+}
+
+.searchblock{
+    z-index: 2;
+    position: relative;
+    width: 900px;
+    length: 200px;
+    margin: 80px auto;
+    font-size: 26px;
+    text-align: center;
+    border-image-width: 5px;
+    border-color: aquamarine;
+}
+.search{
+    padding-left: 20px;
+    width: 700px;
+    height: 50px;
+    border-radius: 5px;
+}
+.searchbutton{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.main{
+    z-index: 1;
+    position: absolute;
+    width: 1100px;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.2);
+    user-select: none;
+    overflow:hidden;
+}
+.nodisplay{
+    display: none;
+}
+.display{
+    display: block;
+}
+.main form{
+    position: absolute;
+    height: 100%;
+    width: 210px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+}
+
+.lasttype2{
+    background: url(../imgs/university.png) no-repeat;
+    background-size:770px 400px;
+}
+.lasttype1{
+    position:absolute;
+    background: url(../imgs/dance.jpg) no-repeat;
+    background-size:770px 400px;
+}
+.lasttype{
+    background-size:770px 400px;
+}
+.person{
+    position:absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: lightsteelblue;
+    z-index:100
+}
+.person:hover{
+    height: 25px;
+    width: 25px;
+    border-radius: 12.5px;
+    background-color: red;
+}
+.p1{
+    position:absolute;
+    margin-left:220px;
+    margin-top:240px;
+}
+.p2{
+    position:absolute;
+    margin-left:320px;
+    margin-top:260px;
+}
+.person:hover~.p2qingkuang{
+    display: block;
+
+}
+.p2qingkuang{
+    border-radius: 12.5px;
+    display:none;
+    height: 150px;
+    font-size:14px;
+    width: 250px;
+    color:black;
+    position:absolute;
+    margin-left:30px;
+    margin-top:30px;
+}
+.p3{
+    position:absolute;
+    margin-left:620px;
+    margin-top:180px;
+}
+.submit{
+    margin-left: 60px;
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid;
+}
+.submit:hover{
+    color: green;
+    transform: scale(1.05,1.05);
+    transition: all.5s ease;
+}
+.format{
+    border-collapse: collapse;
+    margin-left:15%;
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+    width: 70%;
+    padding-bottom:30px;
+    height:50%;
+    overflow:auto;
+}
+.tables td{
+    text-align: center;
+    font-size: 15px;
+    line-height: 20px;
+    padding:10px;
+    box-sizing: border-box;
+    word-break: break-all;
+    border-bottom: 1px solid;
+}
+
+.tables:first-child:last-child{
+    width: 100%;
+}
+.tables th{
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    padding:25px 0px 20px;
+    border-bottom: 1px solid;
+
+}
+.title{
+   text-align:center;
+   margin:70px auto;
+   display:block;
+   color:white;
+}

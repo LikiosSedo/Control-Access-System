@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/base.css">
+    <link rel="stylesheet" href="../static/styles/homepage.css">
+    <link rel="shortcut icon" href="bitbug_favicon.ico"/>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('../static/fonts/icomoon.eot?g4j5o6');
+            src: url('../static/fonts/icomoon.eot?g4j5o6#iefix') format('embedded-opentype'),
+            url('../static/fonts/icomoon.ttf?g4j5o6') format('truetype'),
+            url('../static/fonts/icomoon.woff?g4j5o6') format('woff'),
+            url('../static/fonts/icomoon.svg?g4j5o6#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+<div class="grandpanav">
+    <ul class="topleftnav">
+    </ul>
+</div>
+<!-- 左侧导航栏 -->
+<input type="checkbox" id="check">
+<label for="check">
+    <i id="btn"></i>
+    <i id="cancel"></i>
+</label>
+<div class="bar">
+    <header>Func</header>
+    <ul>
+        <li><a href="#" id="1" onclick="get1ID(this)"><i></i>管理场所人员记录</a></li>
+        <li><a href="#" id="2" onclick="get1ID(this)"><i></i>我的活动轨迹记录</a></li>
+        <li><a href="#" id="3" onclick="get1ID(this)"><i></i>管理场所人员可视化</a></li>
+        <li><a href="#" id="4" onclick="get1ID(this)"><i></i>我的活动轨迹可视化</a></li>
+        <li><a href="#" id="5" onclick="get1ID(this)"><i></i>发热人员列表</a></li>
+    </ul>
+
+</div>
+<!-- 背景 -->
+<section class="bg">
+    <!-- 主要部分 -->
+    <div class="mainfather">
+        <div class="main display">
+            <div class="searchblock">
+                <i class="wh"></i>
+                <input class="search" type="text" id="query1"/>
+                <input class="searchbutton" type="button" value="search" onclick="submit1();">
+            </div>
+            <div class="format">
+             <table class="tables" id="query1_list">
+                <tr>
+                    <th>人员编号</th><th>地点编号</th><th>日期</th><th>时间</th><th>温度</th>
+                </tr>
+                 <tr><td>2019213424</td><td>s6_164</td><td>2022/08/29</td><td>20:33:19</td><td>36.2</td></tr>
+                 <tr><td>2019213409</td><td>d2_203</td><td>2022/08/29</td><td>21:31:41</td><td>37.2</td></tr>
+                 <tr><td>2019213412</td><td>d2_204</td><td>2022/08/29</td><td>22:28:59</td><td>36.5</td></tr>
+                 <tr><td>2019213413</td><td>d2_204</td><td>2022/08/30</td><td>08:36:35</td><td>36.9</td></tr>
+            </table>
+            </div>
+        </div>
+        <div class="main nodisplay">
+            <div class="searchblock">
+                <i  class="wh"></i>
+                <input class="search" type="text" id="query2"/>
+                <input class="searchbutton" type="button" value="search" onclick="submit2();">
+            </div>
+            <div class="format">
+             <table class="tables" id="query2_list">
+                 <tr>
+                    <th>地点编号</th><th>日期</th><th>时间</th><th>温度</th>
+                </tr>
+                 <tr><td>s6_164</td><td>2022/08/18</td><td>00:33:16</td><td>36.8</td></tr>
+                 <tr><td>d2_203</td><td>2022/08/21</td><td>11:11:31</td><td>37.4</td></tr>
+                 <tr><td>d2_204</td><td>2022/08/23</td><td>23:58:57</td><td>36.2</td></tr>
+                 <tr><td>d2_204</td><td>2022/08/28</td><td>04:36:34</td><td>36.4</td></tr>
+            </table>
+            </div>
+        </div>
+        <div class="main nodisplay">
+            <h2 class="title">场所管理人员可视化</h2>
+            <div class="format lasttype1">
+                <div class="person p1"></div>
+                <div class="person p2"></div>
+                <div class="p2qingkuang">
+                    <p>人员：2019213424</p>
+                    <p>进入日期：2021/10/21</p>
+                    <p>进入时间：22:30:25</p>
+                    <p>温度：36.5</p>
+                </div>
+                <div class="person p3"></div>
+            </div>
+        </div>
+        <div class="main nodisplay">
+            <h2 class="title">个人活动轨迹可视化</h2>
+            <div class="format lasttype2"></div>
+        </div>
+        <div class="main nodisplay">
+            <h2 class="title">发热人员列表</h2>
+            <div class="format lasttype">
+                <table class="tables">
+                <tr>
+                    <th>人员编号</th><th>地点编号</th><th>日期</th><th>时间</th><th>温度</th>
+                </tr>
+                 <tr><td>2019213424</td><td>s6_164</td><td>2022/08/29</td><td>20:33:19</td><td>38.2</td></tr>
+                 <tr><td>2019213409</td><td>d2_203</td><td>2022/08/29</td><td>21:31:41</td><td>38.2</td></tr>
+                 <tr><td>2019213412</td><td>d2_204</td><td>2022/08/29</td><td>22:28:59</td><td>38.5</td></tr>
+                 <tr><td>2019213413</td><td>d2_204</td><td>2022/08/30</td><td>08:36:35</td><td>37.9</td></tr>
+            </table>
+            </div>
+        </div>
+        <!--
+         <div class="main nodisplay">
+            <div class="searchblock">
+                <i class="wh"></i>
+                <input class="search" type="text" id="query3"/>
+                <input class="searchbutton" type="button" value="search" onclick="submit3();">
+            </div>
+            <div class="format">
+             <table class="tables" id="query3_list">
+                <tr>
+                    <th>relevant document</th><th>content</th>
+                </tr>
+            </table>
+            </div>
+        </div>
+        -->
+        <!--
+        BU YAO ZHU SHI KE YI ZHI JIE YONG
+        <div class="main nodisplay">
+            <h2 class="title">Invert indexing visualisation</h2>
+            <div class="format lasttype">
+             <table class="tables" id="query4_list">
+                <tr>
+                    <th>vocabulary</th><th>ni</th><th>occurrence</th>
+                </tr>
+            </table>
+            </div>
+        </div>
+        -->
+    </div>
+    <iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe>
+</section>
+
+<script>
+    var divs = document.getElementsByClassName("main");
+    function get1ID(obj) {
+        for (var i = 0; i < 5; i++) {
+            divs[i].classList.remove("display");
+            divs[i].classList.add("nodisplay");
+        }
+        var a = obj.id;
+        divs[a-1].classList.remove("nodisplay");
+        divs[a-1].classList.add("display");
+    }
+    for(var i=0;i<5;i++){
+        document.forms[i].target="rfFrame";
+    }
+
+
+</script>
+<script>
+$(function() {
+			$
+					.ajax({
+						type : "POST",
+						dataType : "json",
+						url : "submit",
+						data: { "method":"invert_visual"},
+						success : function(result) {
+							for (var i = 0; i < result.result.length; i++) {
+								$("#query4_list").append(
+										"<tr name='query4_tr' class='tables'>  <td>"
+												+ result.result[i][0] + "</td>"
+												+ "<td>" + result.result[i][1]+"</td>"
+												+"<td>"+result.result[i][2]+ "</td>"
+												+ " </tr>");
+							}
+						},
+						error : function() {
+							alert("展示用户信息error");
+					}
+			});
+		})
+
+
+
+ function submit1() {
+ alert('success');
+ $.ajax({
+ url: "submit", /*数据提交到submit处*/
+ type: "POST", /*采用POST方法提交*/
+ data: { "query1": $("#query1").val(),"method":"bool"}, /*提交的数据（json格式），从输入框中获取*/
+ /*result为后端函数返回的json*/
+success : function(result) {
+							$("tr[name='query1_tr']").remove();
+							for (var i = 0; i < result.result.length; i++) {
+								$("#query1_list").append(
+										"<tr name='query1_tr' class='tables'>  <td>"
+												+  result.result[i][0] + "</td> <td>"
+												+ result.result[i][1] + "</td>"
+												+ " </tr>");
+							}
+
+						},
+ error: function(){
+ alert('no');
+ }
+ });
+ }
+
+
+
+ function submit2() {
+ alert('success');
+ $.ajax({
+ url: "submit", /*数据提交到submit处*/
+ type: "POST", /*采用POST方法提交*/
+ data: { "query2": $("#query2").val(),"method":"vec"}, /*提交的数据（json格式），从输入框中获取*/
+ /*result为后端函数返回的json*/
+success : function(result) {
+							$("tr[name='query2_tr']").remove();
+							for (var i = 0; i < result.result.length; i++) {
+								$("#query2_list").append(
+										"<tr name='query2_tr' class='tables'>  <td>"
+												+  result.result[i][0] + "</td> <td>"
+												+  result.result[i][1] + "</td> <td>"
+												+  result.result[i][2] + "</td>"
+												+ " </tr>");
+							}
+
+						},
+ error: function(){
+ alert('no2');
+ }
+ });
+ }
+
+
+
+ function submit3() {
+ alert('success');
+ $.ajax({
+ url: "submit", /*数据提交到submit处*/
+ type: "POST", /*采用POST方法提交*/
+ data: { "query3": $("#query3").val(),"method":"invert"}, /*提交的数据（json格式），从输入框中获取*/
+ /*result为后端函数返回的json*/
+success : function(result) {
+							$("tr[name='query3_tr']").remove();
+							for (var i = 0; i < result.result.length; i++) {
+								$("#query3_list").append(
+										"<tr name='query3_tr' class='tables'>  <td>"
+												+  result.result[i][0] + "</td> <td>"
+												+ result.result[i][1] + "</td>"
+												+ " </tr>");
+							}
+
+						},
+ error: function(){
+ alert('no3');
+ }
+ });
+ }
+
+
+</script>
+</html>
+</body>
+</html>
